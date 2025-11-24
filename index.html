@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Scroll-to-Top Button — CodeWithUzma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Scroll-to-Top Button Demo</h1>
+    </header>
+
+    <main>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium praesentium ab dolorem laboriosam error distinctio sunt eveniet nisi voluptatibus temporibus recusandae, repellendus nulla aliquid sequi dolorum vero qui, veniam porro non totam velit modi suscipit commodi? Minus, veniam, quam corrupti eum facilis consectetur maiores laborum aperiam consequatur maxime at eos!</p>
+        <!-- Add lots of content for testing -->
+        <section aria-label="content">
+            <h2>Demo content</h2>
+            <p>Repeat content to fill page...</p>
+            <!-- You can duplicate the paragraph many times, or use script to add content -->
+        </section>
+    </main>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+        <!-- Optional progress ring (SVG circle) -->
+        <svg class="progress-ring" viewBox="0 0 36 36" aria-hidden="true">
+            <path id="ringPath" d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" />
+        </svg>
+
+        <!-- Up arrow icon -->
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor"
+                d="M12 4.5c-.3 0-.59.11-.82.34l-6 6c-.45.45-.45 1.18 0 1.63.45.45 1.18.45 1.63 0L11 8.41V20c0 .66.54 1.2 1.2 1.2.66 0 1.2-.54 1.2-1.2V8.41l4.18 4.06c.23.23.52.34.82.34.3 0 .59-.11.82-.34.45-.45.45-1.18 0-1.63l-6-6A1.15 1.15 0 0 0 12 4.5z" />
+        </svg>
+    </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+:root {
+    --btn-size: 48px;
+    --btn-bg: rgba(20, 20, 20, 0.85);
+    --btn-fg: #fff;
+    --btn-hover-bg: rgba(20, 20, 20, 0.95);
+    --btn-radius: 12px;
+    --btn-shadow: 0 6px 18px rgba(10, 10, 10, 0.35);
+    --show-offset: 300px;
+    /* px to show button */
+    --transition-time: 260ms;
+    --accent: #7c5cff;
+}
+
+/* Basic page styles for demo */
+body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+main {
+    max-width: 900px;
+    margin: 28px auto;
+    padding-bottom: 120vh;
+    /* long page for demo */
+}
+
+/* Scroll-to-top button */
+.scroll-top {
+    position: fixed;
+    right: 20px;
+    bottom: 28px;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    display: inline-grid;
+    place-items: center;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border-radius: var(--btn-radius);
+    box-shadow: var(--btn-shadow);
+    border: none;
+    cursor: pointer;
+    transform: translateY(12px) scale(.98);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        transform var(--transition-time) cubic-bezier(.2, .9, .3, 1),
+        opacity var(--transition-time) ease,
+        background-color var(--transition-time) ease;
+    z-index: 9999;
+}
+
+.scroll-top.show {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-top:focus {
+    outline: 3px solid color-mix(in srgb, var(--accent) 60%, transparent);
+    outline-offset: 4px;
+}
+
+.scroll-top:hover {
+    background: var(--btn-hover-bg);
+}
+
+/* Icon styling */
+.scroll-top svg {
+    display: block;
+    width: 60%;
+    height: 60%;
+}
+
+/* Optional progress indicator (small circular ring behind icon) */
+.progress-ring {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    padding: 6px;
+    box-sizing: border-box;
+    pointer-events: none;
+    opacity: .12;
+    transform: rotate(-90deg);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .scroll-top,
+    .scroll-top.show {
+        transition: none;
+        transform: none;
+        opacity: 1;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Small responsive tweak on small screens */
+@media (max-width:420px) {
+    :root {
+        --btn-size: 44px;
+        right: 14px;
+        bottom: 18px;
+    }
+
+    .scroll-top {
+        right: 14px;
+        bottom: 18px;
+    }
+}
